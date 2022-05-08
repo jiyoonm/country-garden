@@ -1,13 +1,11 @@
 import React, {useEffect, useContext} from "react";
 import { Html } from '@react-three/drei'
 import Listbox from './Listbox';
-import { Credentials } from '../Credentials';
 import useStore from "../appStore";
 import Detail from './Detail';
 
 
 export default function Overlay({ navigate }) {
-  const spotify = Credentials();  
 
   // const { playlist, setPlaylist } = useContext(UserContext);
   const token = useStore((state) => state.token);
@@ -26,7 +24,7 @@ export default function Overlay({ navigate }) {
 
     useEffect(() => {
        setToken();
-      }, [spotify.ClientId, spotify.ClientId]); 
+      }, []); 
 
     useEffect(() => {
       console.log(audios,tracks)

@@ -1,7 +1,7 @@
 import create from "zustand";
 import axios from 'axios';
-import { Credentials } from './Credentials';
-const spotify = Credentials();  
+// import { Credentials } from './Credentials';
+// const spotify = Credentials();  
 
 const useStore = create((set) => ({
 token:'',
@@ -18,7 +18,7 @@ setToken: async () => {
     const response = await axios('https://accounts.spotify.com/api/token', {
         headers: {
           'Content-Type' : 'application/x-www-form-urlencoded',
-          'Authorization' : 'Basic ' + btoa(spotify.ClientId+ ':' + spotify.ClientSecret)      
+          'Authorization' : 'Basic ' + btoa(process.env.REACT_APP_CLIENT_ID+ ':' + process.env.REACT_APP_CLIENT_SECRET)      
         },
         data: 'grant_type=client_credentials',
         method: 'POST'

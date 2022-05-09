@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import AudioPlayer from "../components/AudioPlayer";
 import FlowerCard from "../components/FlowerCard";
-import MoveText from "../components/MoveText";
 
 import steel from "../components/assets/steel.mp3"
 import useStore from "../appStore";
-import  {  useState,useRef} from "react"
+import  {  useState} from "react"
 import { Link,useLocation  } from "react-router-dom";
 
 const TopLeft = styled.div`
@@ -21,12 +20,8 @@ const TopLeft = styled.div`
 `
 
 const BottomLeft = styled.div`
-color:white;
-width:25%;
-// background:white;
-  position: absolute;
-  bottom: 1vw;
-  left: 3vw;
+
+
 
 `
 
@@ -84,13 +79,14 @@ export default function Hud() {
   const [active, setActive] = useState(false);
   const location = useLocation();
 
-  const overlay = useRef()
-  const caption = useRef()
-  const scroll = useRef(0)
+
+   const isVisible =  useStore((state) => state.isVisible);
+   const setVisible =  useStore((state) => state.setVisible);
+
 
   return (
     <>
-      
+       
      <div className={`nav-sections dropdown-content ${active ? 'show' : ''}`}>
             {/* <div className="sections"> */}
      
@@ -105,8 +101,8 @@ export default function Hud() {
 
               <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
               <ul className="nav-links">
-                <li class="nav-item"><Link to="/about">About</Link></li>
-                <li class="nav-item"  onClick={() => setActive(!active)}><Link to="/">Intro</Link></li>
+                <li className="nav-item"><Link to="/about">About</Link></li>
+                <li className="nav-item"  onClick={() => setActive(!active)}><Link to="/">Intro</Link></li>
             </ul>
             </div>
         
@@ -124,11 +120,10 @@ export default function Hud() {
     
     
       <TopLeft>
-      REDEFINING COUNTRY ROADS
-      </TopLeft>
-      <BottomLeft>      
+     REDEFINING COUNTRY ROADS  </TopLeft>
+      <div className={`bottom-left ${isVisible ? 'bottom-show' : ''}`}>      
         <AudioPlayer location={location.pathname} tracks={[steel]} trackIndex={0} image={null} title={"Take Me Home Country Roads"} artist={"John Denver"}/>
-      </BottomLeft>
+      </div>
       <Hamburger>
           <button id="btn" className={`dropbtn ${active ? 'dark' : ''}`}  onClick={() => setActive(!active)} ></button>
       </Hamburger>

@@ -1,6 +1,6 @@
 
 import React, { useRef } from "react";
-import { useGLTF, useScroll,Html } from "@react-three/drei";
+import { useScroll,Html } from "@react-three/drei";
 import { useFrame } from '@react-three/fiber'
 
 export default function MoveText({navigate, props}) {
@@ -12,7 +12,7 @@ export default function MoveText({navigate, props}) {
   const right = useRef();
   const fourth = useRef();
   const button = useRef();
-
+  
 
   const scale=5
   const offset= 10

@@ -5,10 +5,8 @@ import FullPage from './pages/FullPage'
 import HomeNav from './pages/HomeOverlay'
 import About from './pages/About'
 
-import Nav from './pages/Nav'
 
 
-import { Canvas,useThree,useLoader,useFrame } from "@react-three/fiber";
 
 import { Routes , Route } from "react-router-dom";
 import Scene from "./pages/Scene";

@@ -1,13 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import AudioControls from "./AudioControls";
 
-/*
- * Read the blog post here:
- * https://letsbuildui.dev/articles/building-an-audio-player-with-react-hooks
- */
+
 const AudioPlayer = ({location, tracks,trackIndex, image, title, artist }) => {
   // State
-  console.log(trackIndex)
   const [trackProgress, setTrackProgress] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [color, setColor] = useState(false);
@@ -23,7 +19,7 @@ const AudioPlayer = ({location, tracks,trackIndex, image, title, artist }) => {
   // Destructure for conciseness
   const { duration } = audioRef.current;
   useEffect(() => {
-    if (location=='/'|| location=='/garden'){
+    if (location==='/'|| location==='/garden'){
      setColor(false)
     }
     else{

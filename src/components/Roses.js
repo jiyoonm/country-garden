@@ -1,6 +1,6 @@
 import React, { useRef, useState,useEffect} from "react";
-import { useGLTF,TransformControls  } from "@react-three/drei";
-import { useSpring, animated,config } from '@react-spring/three'
+import { useGLTF } from "@react-three/drei";
+import { useSpring, animated } from '@react-spring/three'
 
 function Rose({hovered, ...props}) {
   const group = useRef();

@@ -1,6 +1,6 @@
 
-import React, { useRef, useEffect } from "react";
-import { useGLTF, useIntersect} from "@react-three/drei";
+import React, { useRef} from "react";
+import { useGLTF} from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import useStore from "./../appStore";
 
@@ -15,8 +15,7 @@ export default function Desert ( props) {
   return (
     // <group ref={group} {...props} dispose={null}>
       <mesh
-      // visible={isVisible}
-        // ref={ref}
+
         castShadow
         receiveShadow
         geometry={nodes.Plane001.geometry}

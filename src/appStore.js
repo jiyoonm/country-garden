@@ -11,7 +11,7 @@ trackDetail: null,
 audioDetail: null,
 playlist:'',
 flowerName:'',
-isVisible: false,
+isVisible: true,
 isGarden: false,
 
 setToken: async () => {

@@ -1,6 +1,6 @@
-import React,{useState, useRef} from 'react';
+import React,{useState} from 'react';
 import { useSpring} from '@react-spring/three'
-import { Html } from '@react-three/drei'
+// import { Html } from '@react-three/drei'
 
 // import Button from './Button'
 

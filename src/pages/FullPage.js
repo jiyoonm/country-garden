@@ -1,11 +1,8 @@
 
 import "../App.css";
-import React, {  useEffect,Suspense,useContext } from "react"
-import { Canvas,useThree,useLoader,useFrame, } from "@react-three/fiber";
-import Listbox from "../components/Listbox";
-import * as THREE from 'three'
-import {CubeTextureLoader} from "three";
-import { BrowserRouter as Router, useNavigate, useParams} from "react-router-dom";
+import React, {  useEffect } from "react"
+
+import { useNavigate, useParams} from "react-router-dom";
 
 import flowerIndex from '../data/flowerIndex.json'
 import useStore from "../appStore";

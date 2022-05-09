@@ -1,10 +1,8 @@
-import React, {  useEffect,Suspense,useContext } from "react"
-import { BrowserRouter as Router, useNavigate, Link} from "react-router-dom";
+import React from "react"
+import {  useNavigate } from "react-router-dom";
 
 import '../App.css';
-import useStore from "../appStore";
-import Detail from '../components/Detail';
-import flowerIndex from '../data/flowerIndex.json'
+
 
 function About(){
     const navigate = useNavigate();

@@ -21,9 +21,9 @@ function Tulip({hovered, ...props}) {
         receiveShadow
         geometry={nodes.Cylinder003.geometry}
         material={materials["Material.019"]}
-        position={[-1.19, 5.46, -3.85]}
+        position={[-1.19, 6, -3.85]}
         rotation={[-Math.PI, 0.83, -Math.PI]}
-        scale={[0.19, 0.08, 0.19]}
+        scale={[0.19,.2, 0.19]}
       />
       <animated.mesh
         material-emissiveIntensity={.3}

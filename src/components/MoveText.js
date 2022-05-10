@@ -54,9 +54,12 @@ export default function MoveText({navigate, props}) {
 
 When dissecting a country classic like John Denver’s Country Roads, you can begin to find the diverse roots behind the iconic sounds of the South. 
 </h3>
-    <button  className="buttons"  onClick={() =>  navigate("/garden")}>
-    <p>EXPLORE THE SOUNDS      </p>   
-</button> 
+<button className="buttons enterA" onClick={() =>  navigate("/garden")}>
+        <span className=" a white-a underline " >
+     TAP TO ENTER
+       </span>
+      </button>
+   
   </div>
   
    {/* <span className="caption">

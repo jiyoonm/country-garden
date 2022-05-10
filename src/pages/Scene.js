@@ -53,8 +53,6 @@ export default function Scene(props) {
     }
 
     
-
-
 const [location, setLocation] = useLocation();
 const scroll = useScroll();
 

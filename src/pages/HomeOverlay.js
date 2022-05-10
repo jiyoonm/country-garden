@@ -98,7 +98,7 @@ export default function Hud() {
             <br/>
           Country Roads</h1>
 
-              <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </h3>
+              <h3>Learn about the diverse history of the sounds of the South through its most iconic song.</h3>
               <ul className="nav-links">
                 <li className="nav-item"><Link to="/about">About</Link></li>
                 <li className="nav-item"  onClick={() => setActive(!active)}><Link to="/">Intro</Link></li>

@@ -10,13 +10,14 @@ import useStore from "../appStore";
 export default function FullPage() {  
   const tracks =  useStore((state) => state.tracks);
   const setPlaylist = useStore((state) => state.setPlaylist);
+  const setZoom = useStore((state) => state.setZoom);
 
   const setTrackDetail = useStore((state) => state.setTrackDetail);
-  // const {playlist, setPlaylist } = useContext(UserContext);
   const navigate = useNavigate();
   const { id } = useParams();
   useEffect(() => {
     setPlaylist(flowerIndex[id].playlist, id)
+    
     }, [id]); 
  
   const listboxClicked = () => {
@@ -25,15 +26,20 @@ export default function FullPage() {
     navigate(`/garden/${id}/${0}`)
     setTrackDetail(trackInfo, 0);
   }
+  const exitClicked = (e) => {
+    navigate("/garden")
+    setZoom(e);
+  }
   return(
 
-  <div className="sections">
+  <div className={`sections`} style={{ background:`${flowerIndex[id].color}`}}>
     <div className="exit">
       <div></div>
-  <button onClick={() => navigate("/garden")}>
-  <span  className="close-btn"></span>
+      <button className='nav-icon1 open ' onClick={(e) => exitClicked(e)}>
+        <span ></span>
+        <span ></span>
       </button>
-</div>
+  </div>
     <div className="words">
 
     <div className="titles">

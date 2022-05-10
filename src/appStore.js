@@ -13,6 +13,7 @@ playlist:'',
 flowerName:'',
 isVisible: true,
 isGarden: false,
+inZoom: null,
 
 setToken: async () => {
     const response = await axios('https://accounts.spotify.com/api/token', {
@@ -48,8 +49,11 @@ setPlaylist:  (val,name) => {
     setVisible:  (bool) => {
       set({ isVisible: bool })},
       setGarden:  (bool) => {
-      set({ isGarden: bool  })}
+      set({ isGarden: bool  })},
   
+      setZoom:  (e) => {
+        set({ inZoom:  e })}
+    
 
 
         

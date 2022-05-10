@@ -1,10 +1,10 @@
 import "../App.css";
-import { Canvas,useFrame } from "@react-three/fiber";
+import { Canvas,useFrame} from "@react-three/fiber";
 import {  Bounds, useBounds, PerspectiveCamera, OrbitControls,  Sky, Cloud, Environment,  ScrollControls, useScroll, Scroll} from "@react-three/drei";
 import { useNavigate } from "react-router-dom";
 import useStore from "../appStore";
 import { useLocation, Switch, Route } from "wouter"
-import React, { Suspense} from "react";
+import React, { Suspense,useEffect} from "react";
 import Overlay from "../components/Overlay";
 import Desert from "../components/Desert";
 import Hat from "../components/Hat";
@@ -41,7 +41,6 @@ function Clouds1() {
 export default function Scene(props) {
   const isGarden =  useStore((state) => state.isGarden);
   const setGarden =  useStore((state) => state.setGarden);
-   const setVisible =  useStore((state) => state.setVisible);
 
     function Set() {
       setGarden(true)
@@ -52,15 +51,7 @@ export default function Scene(props) {
       setGarden(false)
       return null
     }
-    function Set2() {
-      // setVisible(true)
-      return null
-    }
-    
-    function Set3() {
-      // setVisible(false)
-      return null
-    }
+
     
 
 
@@ -113,11 +104,9 @@ const scroll = useScroll();
               <Dolly/>
               <PerspectiveCamera position={[0, -3, 30]} fov={50}  makeDefault={!isGarden} />
               <Scroll html style={{ width: '100%' }} pointerEvents='all' >
-                <Set2/>
                 <VideoCard />     
               </Scroll>       
               <Scroll>
-                                <Set3/>
                 <Clouds1/>
               </Scroll>
               <MoveText  navigate={navigate}/> 
@@ -130,7 +119,7 @@ const scroll = useScroll();
           <Desert />
           <Clouds/>
           <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
-            <SelectToZoom navigate={navigate} >
+            <SelectToZoom >
               <Flowers  navigate={navigate}/>
             </SelectToZoom>
           </Bounds>     
@@ -141,7 +130,7 @@ const scroll = useScroll();
             <Desert />
             <Clouds/>
             <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
-              <SelectToZoom navigate={navigate} >
+              <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>
             </Bounds>   
@@ -152,7 +141,7 @@ const scroll = useScroll();
             <Desert />
             <Clouds/>
             <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
-              <SelectToZoom navigate={navigate} >
+              <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>
             </Bounds>       
@@ -163,7 +152,7 @@ const scroll = useScroll();
             <Desert />
             <Clouds/>
             <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
-              <SelectToZoom navigate={navigate} >
+              <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>
             </Bounds>      
@@ -175,22 +164,27 @@ const scroll = useScroll();
 
 </div>
 )}
-function SelectToZoom({ children, navigate }) {
+function SelectToZoom({ children }) {
   const api = useBounds()
- 
+  const inZoom =  useStore((state) => state.inZoom);
+
   const missClick = (e) => {
+    // console.log(e)
      e.button === 0 && api.refresh().fit()
-    
+
   }
 
   const objectClicked = (e) => {
       e.stopPropagation()
-      console.log(e)
-       e.delta <= 2 && api.refresh(e.object.parent).fit()
-    
+      e.delta <= 2 && api.refresh(e.object.parent).fit()
+
        
   }
- 
+  useEffect(()=> {
+    if(inZoom){
+      missClick(inZoom)
+    }
+  },[inZoom])
   return (
     <group 
     onClick={(e) =>objectClicked(e) } 
@@ -200,6 +194,7 @@ function SelectToZoom({ children, navigate }) {
     </group>
   )
 }
+
 
 
 function Dolly() {

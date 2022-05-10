@@ -142,7 +142,7 @@ const AudioPlayer = ({location, tracks,trackIndex, image, title, artist }) => {
           onKeyUp={onScrubEnd}
           style={{ background: trackStyling }}
         />
-        <p className="time">0:{Math.round(trackProgress)+1}/0:30</p>
+<p className="time">0:{Math.round(trackProgress)<10? "0"+Math.round(trackProgress):Math.round(trackProgress)}/0:30</p>
 
       </div>
     </div>

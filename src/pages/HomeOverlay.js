@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import AudioPlayer from "../components/AudioPlayer";
 import FlowerCard from "../components/FlowerCard";
 
-import steel from "../components/assets/steel.mp3"
 import useStore from "../appStore";
 import  {  useState} from "react"
 import { Link,useLocation  } from "react-router-dom";
@@ -122,10 +121,14 @@ export default function Hud() {
       <TopLeft>
      REDEFINING COUNTRY ROADS  </TopLeft>
       <div className={`bottom-left ${isVisible ? 'bottom-show' : ''}`}>      
-        <AudioPlayer location={location.pathname} tracks={[steel]} trackIndex={0} image={null} title={"Take Me Home Country Roads"} artist={"John Denver"}/>
+        <AudioPlayer location={location.pathname} tracks={["https://p.scdn.co/mp3-preview/312d9752910d21881950597b0b0efbd6b20c5ef2?cid=988dedb25cc54a18908de204182e8dab"]} trackIndex={0} image={null} title={"Take Me Home, Country Roads"} artist={"John Denver"}/>
       </div>
       <Hamburger>
-          <button id="btn" className={`dropbtn ${active ? 'dark' : ''}`}  onClick={() => setActive(!active)} ></button>
+          <button className={`nav-icon1 ${active ? 'open' : ''}`}  onClick={() => setActive(!active)} >
+  <span></span>
+  <span></span>
+
+</button>
       </Hamburger>
      
     </>

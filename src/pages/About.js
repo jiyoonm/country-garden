@@ -12,9 +12,9 @@ function About(){
     <div className='sections about'>
         <div className="exit">
             <div></div>
-            <button onClick={() => navigate("/garden")}>
-                <span  className="close-btn"></span>
-            </button>
+            <button button className='nav-icon1 open'onClick={() => navigate("/garden")}>
+            <span></span>
+  <span></span>            </button>
         </div>
         <div className="words">
 
@@ -75,9 +75,8 @@ https://happymag.tv/when-africa-met-the-west-how-the-fiddle-and-banjo-birthed-co
 https://sites.dwrl.utexas.edu/countrymusic/the-history/the-nashville-sound/<br />
 https://longreads.com/2018/08/01/the-cowboy-image-and-the-growth-of-western-music/<br />
 <br />
-<br />
-<br />
-<br />
+Lastly, a special thank you to amazing people of Parsons Design + Technology for helping this project take shape.
+
 
                 </p>
                 </div>

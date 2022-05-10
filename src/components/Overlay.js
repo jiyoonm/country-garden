@@ -20,9 +20,7 @@ export default function Overlay({ }) {
       }, []); 
 
     useEffect(() => {
-      console.log(audios,tracks)
-      setTracks(token, playlist).then(
-      console.log(audios,tracks))
+      setTracks(token, playlist)
       }, [token, playlist]); 
    
     // const listboxClicked = val => {

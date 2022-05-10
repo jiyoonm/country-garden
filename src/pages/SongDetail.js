@@ -9,6 +9,7 @@ import flowerIndex from '../data/flowerIndex.json'
 function SongDetail(){
     const { id, songid } = useParams();
     const location = useLocation();
+    const setZoom = useStore((state) => state.setZoom);
 
     const setPlaylist = useStore((state) => state.setPlaylist);
     const setTrackDetail = useStore((state) => state.setTrackDetail);
@@ -26,7 +27,6 @@ function SongDetail(){
 
     const currentTracks = [...tracks];
 
-    console.log(currentTracks)
     if (currentTracks.length!==0){
         const trackInfo  = currentTracks[songid].track;
         setTrackDetail(trackInfo, songid)
@@ -34,7 +34,6 @@ function SongDetail(){
 
     const nextClicked = () => {
         const currentVal= parseInt(songid)
-        console.log(currentTracks.length)
         if (currentVal>=currentTracks.length-1){
             if(curentIndex>=2){
             navigate(`/garden/${Object.keys(flowerIndex)[0]}`)
@@ -58,15 +57,16 @@ function SongDetail(){
         }
 
     }
-
+    const exitClicked = (e) => {
+        navigate("/garden")
+        setZoom(e);
+      }
     return(
-    <div className='sectionsSongs'>
-        <div className="exit">
-            <div></div>
-            <button onClick={() => navigate("/garden")}>
-                <span  className="close-btn"></span>
-            </button>
-        </div>
+    <div className='sectionsSongs'  style={{ background:`${flowerIndex[id].color}`}}>
+       <button className='nav-icon1 open ' onClick={(e) =>exitClicked(e)}>
+        <span ></span>
+        <span ></span>
+      </button>
         <div className="detail" >
       <div className="titles">
         <div >
@@ -78,12 +78,14 @@ function SongDetail(){
       </div>
             {trackDetail && <Detail {...trackDetail} location={location.pathname} tracks={audios} trackIndex={audioDetail} about={flowerIndex[id].songsdetail[audioDetail]} titles={flowerIndex[id].songstitle[audioDetail]} />}
         <div className="progressNav">
-        <button className='prev'onClick={prevClicked}>
-            previous
-            </button>
+        <button className="prev" onClick={prevClicked}>
+            {/* <div className="prev"/> */}
+          previous
+                        </button>
             <p>{parseInt(songid)+1}/{currentTracks.length}</p>
-            <button className='prev' onClick={nextClicked}>
-                next
+            <button className="prev" onClick={nextClicked}>
+          
+next
             </button>
             </div>
 

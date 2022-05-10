@@ -85,7 +85,7 @@ const scroll = useScroll();
                 minPolarAngle={Math.PI/2.3}
                 maxPolarAngle={Math.PI/2.1}
                 enableZoom={false}
-                enablePan={true}
+                enablePan={false}
             />  
 
       <directionalLight

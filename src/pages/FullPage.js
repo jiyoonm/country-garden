@@ -38,7 +38,7 @@ export default function FullPage() {
 
     <div className="titles">
       <div >
-    <p>THE SOUND OF HISTORY REVEALING ITSELF</p>
+    <p>REDEFINING COUNTRY ROADS</p>
     </div>
     <div className="subtitles">
 

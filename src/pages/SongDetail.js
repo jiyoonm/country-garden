@@ -67,7 +67,16 @@ function SongDetail(){
                 <span  className="close-btn"></span>
             </button>
         </div>
-            {trackDetail && <Detail {...trackDetail} location={location.pathname} tracks={audios} trackIndex={audioDetail} about={flowerIndex[id].songsdetail[0]} titles={flowerIndex[id].songstitle[0]} />}
+        <div className="detail" >
+      <div className="titles">
+        <div >
+          <p>REDEFINING COUNTRY ROADS</p>
+        </div>
+        <div className="subtitles">
+          <p>{flowerIndex[id].subtitle}</p>
+        </div>
+      </div>
+            {trackDetail && <Detail {...trackDetail} location={location.pathname} tracks={audios} trackIndex={audioDetail} about={flowerIndex[id].songsdetail[audioDetail]} titles={flowerIndex[id].songstitle[audioDetail]} />}
         <div className="progressNav">
         <button className='prev'onClick={prevClicked}>
             previous
@@ -76,6 +85,8 @@ function SongDetail(){
             <button className='prev' onClick={nextClicked}>
                 next
             </button>
+            </div>
+
         </div>
     </div>
     )

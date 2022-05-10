@@ -1,5 +1,5 @@
 import React from "react"
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 import '../App.css';
 
@@ -12,7 +12,7 @@ function About(){
     <div className='sections about'>
         <div className="exit">
             <div></div>
-            <button button className='nav-icon1 open'onClick={() => navigate("/garden")}>
+            <button button className='nav-icon1 open'onClick={() => navigate(-1)}>
             <span></span>
   <span></span>            </button>
         </div>

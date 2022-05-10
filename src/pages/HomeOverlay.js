@@ -76,8 +76,11 @@ const Hamburger = styled.div`
 
 export default function Hud() {
   const [active, setActive] = useState(false);
+  const [help, setHelp] = useState(false);
+
   const location = useLocation();
 
+  const isGarden =  useStore((state) => state.isGarden);
 
    const isVisible =  useStore((state) => state.isVisible);
    const setVisible =  useStore((state) => state.setVisible);
@@ -116,10 +119,31 @@ export default function Hud() {
         </div>
  
       </div>
-    
+      <div className={`nav-section dropdown-content1 ${help ? 'show1' : ''}`}>
+            {/* <div className="sections"> */}
+     
+            <div className="helps">
+
+          
+       
+         Click on a flower in the garden to explore the history of a sound.
+        
+          
+        
+            {/* </div> */}
+        </div>
+ 
+      </div>
     
       <TopLeft>
      REDEFINING COUNTRY ROADS  </TopLeft>
+
+     <div className={`bottom-right ${isGarden ? 'bottom-show' : ''}`}>      
+     <button className={`helpbutton ${help ? 'open' : ''}`}  onClick={() => setHelp(!help)} >?</button>
+
+     
+    </div>
+     
       <div className={`bottom-left ${isVisible ? 'bottom-show' : ''}`}>      
         <AudioPlayer location={location.pathname} tracks={["https://p.scdn.co/mp3-preview/312d9752910d21881950597b0b0efbd6b20c5ef2?cid=988dedb25cc54a18908de204182e8dab"]} trackIndex={0} image={null} title={"Take Me Home, Country Roads"} artist={"John Denver"}/>
       </div>
@@ -130,7 +154,7 @@ export default function Hud() {
 
 </button>
       </Hamburger>
-     
+
     </>
   )
 }

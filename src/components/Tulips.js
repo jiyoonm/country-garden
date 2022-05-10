@@ -11,7 +11,7 @@ function Tulip({hovered, ...props}) {
     colors: hovered  ?'gray' : 'black',
     // config: {duration:50}
     });
-  const { nodes, materials } = useGLTF("/tulip1JOINED.glb");
+  const { nodes, materials } = useGLTF("/tulip1JOINEDfinal.glb");
   return (
     <group ref={group} scale={[1.1,1.4,1.1]} {...props} dispose={null}>
       <animated.mesh
@@ -19,22 +19,22 @@ function Tulip({hovered, ...props}) {
         material-emissive  = {colors}
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder003.geometry}
-        material={materials["Material.019"]}
-        position={[-1.19, 6, -3.85]}
-        rotation={[-Math.PI, 0.83, -Math.PI]}
-        scale={[0.19,.2, 0.19]}
+        geometry={nodes.Cylinder.geometry}
+        material={materials["Material.002"]}
+        position={[-3.35, -1.55, -9.85]}
+        rotation={[2.02, 1.57, 0]}
+        scale={[-1.4, -0.42, -0.79]}
       />
       <animated.mesh
         material-emissiveIntensity={.3}
         material-emissive  = {colors}
         castShadow
         receiveShadow
-        geometry={nodes.Cylinder.geometry}
-        material={materials["Material.002"]}
-        position={[-3.12, 0.16, -9.23]}
-        rotation={[2.02, 1.57, 0]}
-        scale={[-1.19, -0.35, -0.68]}
+        geometry={nodes.Cylinder003.geometry}
+        material={materials["Material.019"]}
+        position={[-1.08, 5.81, -3.54]}
+        rotation={[-Math.PI, 0.83, -Math.PI]}
+        scale={[0.23, 0.09, 0.23]}
       />
       <animated.mesh
         material-emissiveIntensity={.3}
@@ -43,16 +43,15 @@ function Tulip({hovered, ...props}) {
         receiveShadow
         geometry={nodes.Plane005.geometry}
         material={materials.Material}
-        position={[-1.19, 5.95, -3.85]}
+        position={[-1.08, 6.38, -3.54]}
         rotation={[Math.PI / 2, 0, -2.56]}
-        scale={[0.39, 0.39, 0.44]}
+        scale={[0.48, 0.48, 0.54]}
       />
     </group>
   );
 }
 
-useGLTF.preload("/tulip1JOINED.glb");
-
+useGLTF.preload("/tulip1JOINEDfinal.glb");
 
 export default function Tulips({...props}) {
   const group = useRef();  
@@ -62,9 +61,9 @@ export default function Tulips({...props}) {
         document.body.style.cursor = hovered ? "pointer" : "auto"
       }, [hovered])
 
-      const postions=[[-3,-.2,-5],[-4, -.5,-3],[-3,0,-4]]
-      const scales=[1.2,1.4,1]
-      const rotations=[[0,-Math.PI/2,0],[0,0,0],[0,-.4,0],[0,Math.PI/2,0]]
+      const postions=[[1,2.8,-9.6],[1.5, 2.3,-3.9],[-4,2.7,-4.3]]
+      const scales=[.8,1.05,.8]
+      const rotations=[[0,Math.PI/2,0],[0,0,0],[0,-Math.PI/4,0],[0,.1,0]]
   return (
 
       <group ref={group} {...props}

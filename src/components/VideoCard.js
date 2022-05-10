@@ -43,14 +43,16 @@ useFrame(() => {
             <br/>
           Country Roads</h1>
 
-              <h3 className="main-title">Learn about the diverse history of the sounds of the South through its most iconic song.</h3>
+              <h3 className="main-title1">Learn about the diverse history of the sounds of the South through its most iconic song.</h3>
+              <p className="scroll-help">
 
+Scroll to continue &#709;</p>
             </div>
             <div className="video-help">
+{/* <div></div> */}
+<button onClick={handleToggleMute} className="control">{muted?"unmute video ":"mute video"}</button>
 
-            <p className="scroll-help">
-              Scroll to continue &#709;</p>
-              <button onClick={handleToggleMute} className="control">{muted?"unmute video ":"mute video"}</button>
+         
 
             </div>
 

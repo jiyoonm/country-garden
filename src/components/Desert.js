@@ -1,4 +1,3 @@
-
 import React, { useRef} from "react";
 import { useGLTF} from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
@@ -20,9 +19,9 @@ export default function Desert ( props) {
         receiveShadow
         geometry={nodes.Plane001.geometry}
         material={materials["Material.001"]}
-        position={[-17, 1.6, 20]}
-        rotation={[0.01, .2,-.03]}
-        scale={[2.5,6,5.6]}
+        position={[-15, 1.5, 28]}
+        rotation={[0.01, .2,-.05]}
+        scale={[2.5,5.4,5.6]}
       />
     
     // </group>

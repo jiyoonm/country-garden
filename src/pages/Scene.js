@@ -18,9 +18,9 @@ import Flowers from "../components/Flowers";
 function Clouds() {
   return (
     <group>
-      <Cloud depthTest={false} position={[-20, 19, -20]} speed={0.3} opacity={0.25} />
-      <Cloud depthTest={false} position={[-16, 20, -9]} speed={0.3} opacity={0.24} />
-      <Cloud depthTest={false} position={[-16, 16,4]} speed={0.2} opacity={0.24} />
+      <Cloud depthTest={false} position={[-15, 15, -17]} speed={0.21} opacity={0.2} />
+      <Cloud depthTest={false} position={[-30, 17, 8]} speed={0.5} opacity={0.1} />
+      <Cloud depthTest={false} position={[-14, 15,20]} speed={0.23} opacity={0.24} />
     </group>
   )
 }
@@ -66,7 +66,21 @@ const scroll = useScroll();
   <Suspense fallback={null}>
       <PerspectiveCamera position={[0, -3, 30]} fov={50}  makeDefault={isGarden} />
 
-      <OrbitControls
+      {/* <OrbitControls
+                enabled={isGarden}
+                makeDefault={isGarden}
+                // minAzimuthAngle={Math.PI/2.8}
+                // maxAzimuthAngle={Math.PI/1.4}
+                // minPolarAngle={Math.PI/2.3}
+                // maxPolarAngle={Math.PI/2}
+                minAzimuthAngle={Math.PI/2.8}
+                maxAzimuthAngle={Math.PI/1.4}
+                minPolarAngle={Math.PI/2.3}
+                maxPolarAngle={Math.PI/2}
+                enableZoom={false}
+                enablePan={false}
+            />   */}
+  <OrbitControls
                 enabled={isGarden}
                 makeDefault={isGarden}
                 minAzimuthAngle={Math.PI/2.5}
@@ -76,10 +90,9 @@ const scroll = useScroll();
                 enableZoom={false}
                 enablePan={false}
             />  
-
       <directionalLight
             castShadow
-            position={[10, 20, 15]}
+            position={[10, 27, 15]}
             shadow-camera-right={14}
             shadow-camera-top={14}
             shadow-camera-left={-14}
@@ -113,10 +126,10 @@ const scroll = useScroll();
         </Route>
         <Route path="/about">
           <Set/>
-          <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[5, 3.2, -13]} />
+          <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[6.5, 3.6, -13]} />
           <Desert />
           <Clouds/>
-          <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
+          <Bounds  fit={isGarden} clip damping={1.4} margin={1.35}>
             <SelectToZoom >
               <Flowers  navigate={navigate}/>
             </SelectToZoom>
@@ -124,10 +137,10 @@ const scroll = useScroll();
         </Route>
         <Route path="/garden/:id/:id">
           <Set/>
-            <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[5, 3.2, -13]} />
+          <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[6.5, 3.6, -13]} />
             <Desert />
             <Clouds/>
-            <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
+            <Bounds  fit={isGarden} clip damping={1.4} margin={1.35}>
               <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>
@@ -135,10 +148,10 @@ const scroll = useScroll();
           </Route>
           <Route path="/garden">
             <Set/>
-            <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[5, 3.2, -13]} />
+            <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[6.5, 3.6, -13]} />
             <Desert />
             <Clouds/>
-            <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
+            <Bounds  fit={isGarden} clip damping={1.4} margin={1.35}>
               <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>
@@ -146,10 +159,10 @@ const scroll = useScroll();
           </Route>
           <Route path="/garden/:id">
             <Set/>
-            <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[5, 3.2, -13]} />
+            <Hat scale={1.4} rotation={[Math.PI/10,Math.PI/10,-Math.PI/13]} position={[6.5, 3.6, -13]} />
             <Desert />
             <Clouds/>
-            <Bounds  fit={isGarden} clip damping={1.4} margin={1.3}>
+            <Bounds  fit={isGarden} clip damping={1.4} margin={1.35}>
               <SelectToZoom  >
                 <Flowers  navigate={navigate}/>
               </SelectToZoom>

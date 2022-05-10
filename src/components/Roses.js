@@ -48,8 +48,8 @@ export default  function Roses({...props}) {
         document.body.style.cursor = hovered ? "pointer" : "auto"
       }, [hovered])
 
-      const postions=[[-3, -2, 3],[-4,-2, 2.13],[-4, -2,1],[-3, -2, 3]]
-      const scales=[1.2,1,1.4,.9]
+      const postions=[[-.6, -1, 4],[-2.6,-.5, 4.8],[-2.6, -1,3],[-1.4, -1, 4]]
+      const scales=[1.1,1,1.4,.9]
       const rotations=[[0,Math.PI,0],[0,0,0],[0,-.4,0],[0,Math.PI/2,0]]
 
   return (

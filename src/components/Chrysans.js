@@ -53,9 +53,9 @@ export default function Chrysans({...props}) {
     document.body.style.cursor = hovered ? "pointer" : "auto"
   }, [hovered])
 
-  const postions=[[-3,-.2,0],[4, -.5,0],[3,0,0]]
-  const scales=[1.2,1.4,1]
-  const rotations=[[0,-Math.PI/2,0],[0,0,0],[0,-.4,0],[0,Math.PI/2,0]]
+  const postions=[[4,-2,-3],[6, -2.4,0],[1,-1.5,-1.5]]
+  const scales=[1.3,1.6,1.2]
+  const rotations=[[0,Math.PI/2,0],[0,0,0],[0,-Math.PI/4,0]]
   return (
 
       // <Fireflies bool={hovered}/>

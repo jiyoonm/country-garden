@@ -61,8 +61,8 @@ export default function Tulips({...props}) {
         document.body.style.cursor = hovered ? "pointer" : "auto"
       }, [hovered])
 
-      const postions=[[1,2.8,-9.6],[.6, 2.1,-4.],[-4,2.7,-4.3]]
-      const scales=[.8,1.05,.8]
+      const postions=[[1,2.8,-9.9],[.6, 2.1,-4.],[-4,2.7,-4]]
+      const scales=[.8,1.05,.9]
       const rotations=[[0,Math.PI/2,0],[0,0,0],[0,-Math.PI/4,0],[0,.1,0]]
   return (
 
